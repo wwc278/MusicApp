@@ -1,0 +1,6 @@
+<h3>Bands<h3>
+
+	<% @bands.each_with_index do |band, idx|%>
+	<%= idx + 1 %>
+	<%= link_to band.band_name, band_path(band) %><br>
+	<%end%>

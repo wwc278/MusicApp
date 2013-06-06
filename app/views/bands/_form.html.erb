@@ -1,0 +1,19 @@
+<% action_url = (method == :post) ? bands_path : bands_edit_path(params[:id]) %>
+
+<%= p bands_edit_path(params[:id])%>
+
+<form id ="" action = "<%= action_url %>" method = "<%= method %>">
+	<%=method%>
+	<input type="hidden" name="_method"
+	value="put">
+
+	<label for="Band Name">Band Name</label><input type="text" name="band[band_name]" value="" id="Band Name"><br>
+
+
+
+	<label for=""></label><input type="submit" name="" value="Submit" id="Submit">
+
+
+
+
+</form>
