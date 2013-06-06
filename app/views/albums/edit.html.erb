@@ -4,6 +4,6 @@
 	<%= flash[:notice] %>
 	<% end %>
 
-	<%= Album.find(params[:id]).album_name%>
+	<%= @album.album_name%>
 	<%= render :partial => "form", :locals => {:method => :put} %>
 

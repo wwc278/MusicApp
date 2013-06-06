@@ -4,5 +4,6 @@
 	Albums<br>
 	<br>
 	<% @band.albums.each do |album| %>
-	<%= link_to album.album_name, album_path(album) %><br>
+	<%= link_to album.album_name,
+	band_album_path(album.band_id, album.id) %><br>
 	<% end %>

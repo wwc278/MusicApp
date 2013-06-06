@@ -1,6 +1,6 @@
 <% action_url = (method == :post) ? bands_path : band_path(params[:id]) %>
 
-<%= method = (method == :post ? :post : :put)%>
+<% method = (method == :post ? :post : :put)%>
 <form id ="" action = "<%= action_url %>" method = "post">
 
 	<input type="hidden" name="_method"

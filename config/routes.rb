@@ -56,10 +56,12 @@ MusicApp::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  resources :bands
-  resources :albums
-  resources :tracks
+  resources :bands do
+    resources :albums do
+      resources :tracks
+    end
+  end
 
-
+  #resources :albums, :only => [:new, :create]
 
 end

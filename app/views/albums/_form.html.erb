@@ -1,15 +1,24 @@
-<% action_url = (method == :post) ? album_path : album_path(params[:id]) %>
+<% action_url =
+(method == :post) ?
+band_albums_path(params[:band_id]) : band_album_path(params[:band_id], params[:id])%>
 
 <% method = (method == :post ? :post : :put)%>
-<form id ="" action = "<%= action_url %>" method = "post">
+<form id ="album_form" action = "<%= action_url %>" method = "post">
 
 	<input type="hidden" name="_method"
 	value="<%= method %>">
 
-	<label for="Band Name">Album Name</label><input type="text" name="album[album_name]" value="" id="Band Name"><br>
+	<label for="Band Name">Album Name: </label><input type="text" name="album[album_name]" value="" id="Band Name"><br>
+
+	<label>Band Name:</label>
+	<select name = "album[band_id]" form = "album_form">
+		<% Band.all.each do |band| %>
+		<option value = "<%= band.id %>" > <%= band.band_name %> </option>
+		<% end %>
+	</select>
 
 
-
+	<br>
 	<label for=""></label><input type="submit" name="" value="Submit" id="Submit">
 
 
