@@ -1,0 +1,8 @@
+<h3>Create an album<h3>
+
+	<% if flash[:notice] %>
+	<%= flash[:notice] %>
+	<% end %>
+
+	<%= render :partial => "form", :locals => {:method => :post} %>
+

@@ -31,7 +31,6 @@ class BandsController < ApplicationController
   end
 
   def edit
-    p edit_band
     render :edit
   end
 

@@ -1,8 +1,9 @@
-<h3>Edit a Band<h3>
+<h3>Edit an album<h3>
 
 	<% if flash[:notice] %>
 	<%= flash[:notice] %>
 	<% end %>
 
+	<%= Album.find(params[:id]).album_name%>
 	<%= render :partial => "form", :locals => {:method => :put} %>
 
