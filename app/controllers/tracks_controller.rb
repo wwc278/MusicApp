@@ -32,4 +32,10 @@ class TracksController < ApplicationController
     end
 
   end
+
+  def destroy
+    delete_track = Track.find(params[:id])
+    delete_track.delete
+    redirect_to band_album_path(params[:band_id], params[:album_id])
+  end
 end

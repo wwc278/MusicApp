@@ -11,6 +11,8 @@
 	<%= link_to track.track_name,
 	band_album_track_path(album.band_id, album.id, track.id) %><br>
 
+	<%= button_to "Destroy Album", band_album_path(@band_id, album.id), :method => :delete%><br>
+
 
 
 	<% end %><br>
