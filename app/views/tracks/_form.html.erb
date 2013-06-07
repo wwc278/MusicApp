@@ -1,0 +1,26 @@
+
+
+<% method = (method == :post ? :post : :put)%>
+<form id ="track_form" action = "<%= action_url %>" method = "post">
+
+	<input type="hidden" name="_method"
+	value="<%= method %>">
+
+	<%= Track.find(params[:id]).track_name if method == :put%><br>
+	<label for="Band Name">Track Name: </label><input type="text" name="track[track_name]" value="" id="Band Name"><br>
+
+	<label>Album Name:</label>
+	<select name = "track[album_id]" form = "track_form">
+		<% Album.all.each do |album| %>
+		<option value = "<%= album.id %>" > <%= album.album_name %> </option>
+		<% end %>
+	</select>
+
+
+	<br>
+	<label for=""></label><input type="submit" name="" value="Submit" id="Submit">
+
+
+
+
+</form>

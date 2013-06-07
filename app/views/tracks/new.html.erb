@@ -1,0 +1,11 @@
+<h3>Create a Track<h3>
+
+	<% if flash[:notice] %>
+	<%= flash[:notice] %>
+	<% end %>
+
+	<% action_url = '/bands/1/albums/1/tracks' %>
+
+	<%= render :partial => "form",
+	:locals => {:action_url => action_url, :method => :post} %>
+

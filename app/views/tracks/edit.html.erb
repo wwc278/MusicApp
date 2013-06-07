@@ -1,0 +1,11 @@
+<h3>Edit a Track<h3>
+
+	<% if flash[:notice] %>
+	<%= flash[:notice] %>
+	<% end %>
+	<% action_url =
+	band_album_track_path(params[:band_id], params[:album_id], params[:id]) %>
+
+	<%= render :partial => "form",
+	:locals => {:action_url => action_url, :method => :put} %>
+
